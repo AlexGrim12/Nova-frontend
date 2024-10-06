@@ -4,14 +4,14 @@ import { useSocket } from '@/app/components/provider/socket-provider'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, useGLTF } from '@react-three/drei'
 import { Suspense } from 'react'
-import { StarBackground } from './StarBackground' // Importamos el fondo de estrellas
+import { StarBackground } from './StarBackground' // Importing the star background
 
 function Model(props = {}) {
-  const { scene } = useGLTF('/models/asteroid/scene.gltf') // Ruta al modelo GLTF
+  const { scene } = useGLTF('/models/asteroid/scene.gltf') // Path to the GLTF model
 
-  // Animación de rotación
+  // Rotation animation
   useFrame(() => {
-    scene.rotation.y += 0.01 // Ajusta la velocidad de rotación
+    scene.rotation.y += 0.01 // Adjusts the rotation speed
   })
 
   return <primitive object={scene} {...props} />
@@ -22,7 +22,7 @@ export function ProjectionView() {
 
   return (
     <div className="h-screen bg-black text-white p-8 relative">
-      {/* Fondo de estrellas */}
+      {/* Star background */}
       <StarBackground />
 
       {selectedAsteroid ? (
@@ -32,8 +32,8 @@ export function ProjectionView() {
               <ambientLight intensity={0.5} />
               <pointLight position={[10, 10, 10]} />
               <Suspense fallback={null}>
-                <Model scale={0.1} />
-                {/* Ajusta la escala según sea necesario */}
+                <Model scale={0.15} />
+                {/* Adjust the scale as needed */}
                 <OrbitControls />
               </Suspense>
             </Canvas>
@@ -43,21 +43,21 @@ export function ProjectionView() {
             <h1 className="text-4xl font-bold">{selectedAsteroid.name}</h1>
             <div className="grid grid-cols-2 gap-4 text-lg">
               <div className="bg-gray-800 p-4 rounded-lg">
-                <p className="font-semibold">Diámetro</p>
+                <p className="font-semibold">Diameter</p>
                 <p>{selectedAsteroid.diameter.toFixed(2)} km</p>
               </div>
               <div className="bg-gray-800 p-4 rounded-lg">
-                <p className="font-semibold">Velocidad</p>
+                <p className="font-semibold">Speed</p>
                 <p>{parseFloat(selectedAsteroid.velocity).toFixed(2)} km/h</p>
               </div>
               <div className="bg-gray-800 p-4 rounded-lg">
-                <p className="font-semibold">Distancia</p>
+                <p className="font-semibold">Distance</p>
                 <p>
                   {parseFloat(selectedAsteroid.miss_distance).toFixed(2)} km
                 </p>
               </div>
               <div className="bg-gray-800 p-4 rounded-lg">
-                <p className="font-semibold">Estado</p>
+                <p className="font-semibold">Status</p>
                 <p
                   className={
                     selectedAsteroid.is_potentially_hazardous
@@ -66,8 +66,8 @@ export function ProjectionView() {
                   }
                 >
                   {selectedAsteroid.is_potentially_hazardous
-                    ? 'Peligroso'
-                    : 'Seguro'}
+                    ? 'Dangerous'
+                    : 'Safe'}
                 </p>
               </div>
             </div>
@@ -76,7 +76,7 @@ export function ProjectionView() {
       ) : (
         <div className="flex items-center justify-center h-full">
           <p className="text-2xl text-white">
-            Esperando selección de asteroide...
+            Waiting for asteroid selection...
           </p>
         </div>
       )}
@@ -84,4 +84,4 @@ export function ProjectionView() {
   )
 }
 
-useGLTF.preload('/models/asteroid/scene.gltf') // Pre-carga el modelo
+useGLTF.preload('/models/asteroid/scene.gltf') // Pre-loads the model

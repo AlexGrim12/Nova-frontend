@@ -21,13 +21,13 @@ export function NavBar() {
               href="/menu"
               className="text-white hover:text-purple-400 transition"
             >
-              Menú
+              Menu
             </Link>
             <Link
               href="/about"
               className="text-white hover:text-purple-400 transition"
             >
-              Acerca de
+              About
             </Link>
             <Link
               href="/control"
@@ -62,7 +62,7 @@ export function NavBar() {
                 className="text-white hover:text-purple-400 transition"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Acerca de
+                About
               </Link>
               <Link
                 href="/control"

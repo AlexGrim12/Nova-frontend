@@ -41,11 +41,11 @@ export default function ControlPage() {
     <main className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-purple-900">
       <div className="container mx-auto p-6">
         <h1 className="text-4xl font-bold text-white mb-8 text-center">
-          Control de Asteroides NEO
+          NEO Asteroid Control
         </h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Lista de Asteroides */}
+          {/* Asteroid List */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -54,7 +54,7 @@ export default function ControlPage() {
           >
             <h2 className="text-2xl font-semibold text-white mb-6 flex items-center gap-2">
               <Navigation2 className="text-purple-400" />
-              Lista de Asteroides
+              Asteroid List
             </h2>
 
             {loading ? (
@@ -82,15 +82,15 @@ export default function ControlPage() {
                     </div>
                     <div className="mt-2 space-y-1 text-sm opacity-90">
                       <p className="flex items-center gap-2">
-                        <span className="text-purple-400">Diámetro:</span>
+                        <span className="text-purple-400">Diameter:</span>
                         {asteroid.diameter.toFixed(2)} km
                       </p>
                       <p className="flex items-center gap-2">
-                        <span className="text-purple-400">Estado:</span>
+                        <span className="text-purple-400">Status:</span>
                         {asteroid.is_potentially_hazardous ? (
-                          <span className="text-red-400">Peligroso</span>
+                          <span className="text-red-400">Dangerous</span>
                         ) : (
-                          <span className="text-green-400">Seguro</span>
+                          <span className="text-green-400">Safe</span>
                         )}
                       </p>
                     </div>
@@ -100,7 +100,7 @@ export default function ControlPage() {
             )}
           </motion.div>
 
-          {/* Detalles del Asteroide */}
+          {/* Asteroid Details */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -109,7 +109,7 @@ export default function ControlPage() {
           >
             <h2 className="text-2xl font-semibold text-white mb-6 flex items-center gap-2">
               <Activity className="text-purple-400" />
-              Detalles del Asteroide
+              Asteroid Details
             </h2>
 
             {selectedAsteroid ? (
@@ -123,31 +123,31 @@ export default function ControlPage() {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <DetailCard
-                    label="Diámetro"
+                    label="Diameter"
                     value={`${selectedAsteroid.diameter.toFixed(2)} km`}
                   />
                   <DetailCard
-                    label="Velocidad"
+                    label="Speed"
                     value={`${parseFloat(selectedAsteroid.velocity).toFixed(
                       2
                     )} km/h`}
                   />
                   <DetailCard
-                    label="Distancia"
+                    label="Distance"
                     value={`${parseFloat(
                       selectedAsteroid.miss_distance
                     ).toFixed(2)} km`}
                   />
                   <DetailCard
-                    label="Fecha de aproximación"
+                    label="Close Approach Date"
                     value={selectedAsteroid.close_approach_date}
                   />
                   <DetailCard
-                    label="Estado"
+                    label="Status"
                     value={
                       selectedAsteroid.is_potentially_hazardous
-                        ? 'Peligroso'
-                        : 'Seguro'
+                        ? 'Dangerous'
+                        : 'Safe'
                     }
                     status={
                       selectedAsteroid.is_potentially_hazardous
@@ -161,7 +161,7 @@ export default function ControlPage() {
               <div className="flex flex-col items-center justify-center h-64 text-gray-400">
                 <Navigation2 className="h-12 w-12 mb-4 text-purple-400" />
                 <p className="text-lg">
-                  Selecciona un asteroide para ver sus detalles
+                  Select an asteroid to view its details
                 </p>
               </div>
             )}
