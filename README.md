@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Here’s a draft of the README for your frontend project:
 
-## Getting Started
+---
 
-First, run the development server:
+# 3D Celestial Model Viewer Frontend
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This repository contains the frontend for the **3D Celestial Model Viewer**. The application allows users to explore 3D models of celestial bodies, view detailed information, and control the projection using WebSockets and voice commands.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Interactive 3D Models**: The application uses **Three.js** for rendering 3D models of celestial bodies such as planets and moons. Models can be viewed and rotated in real time.
+- **Voice-Controlled Interaction**: Through integration with a backend service, users can control which celestial body to display and retrieve information via voice commands.
+- **Next.js and React**: The app is built using **Next.js** and **React**, allowing for a smooth user experience and server-side rendering capabilities.
+- **Real-time Communication**: WebSockets are used to provide real-time interaction with the backend, allowing seamless control and updates to the displayed celestial bodies.
+- **Tailwind CSS**: Responsive and modern UI built with **Tailwind CSS**.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Backend
 
-## Learn More
+The backend for this project is hosted in a separate repository. It handles voice recognition and processing using the following technologies:
 
-To learn more about Next.js, take a look at the following resources:
+- **Python** and **Flask**: For the server-side logic and WebSocket communication.
+- **Whisper**: OpenAI's automatic speech recognition (ASR) model, which listens to and processes voice commands.
+- **OpenAI**: Used for additional language processing and generating responses based on user queries.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+For the backend code and more details, please refer to the [Backend Repository](https://github.com/ruyca/nova_backend).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tech Stack
 
-## Deploy on Vercel
+### Frontend:
+- **Three.js**: For 3D model rendering and scene interaction.
+- **Next.js**: Server-side rendering and React framework.
+- **Tailwind CSS**: Utility-first CSS framework for designing the UI.
+- **WebSockets**: For real-time communication with the backend.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Backend:
+- **Python**: For handling the server logic.
+- **Flask**: Lightweight web framework for the API and WebSocket connections.
+- **Whisper**: Voice recognition for understanding user commands.
+- **OpenAI API**: For advanced natural language processing.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/AlexGrim12/Nova-frontend
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   cd 3D-celestial-viewer-frontend
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+   The app will be running on `http://localhost:3000`.
+
+Make sure the backend server is running to enable voice interaction and WebSocket features.
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+This README provides a good overview of your project, highlighting both the frontend and the separate backend components. Let me know if you'd like any further adjustments!
