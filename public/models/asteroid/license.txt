@@ -1,0 +1,11 @@
+Model Information:
+* title:	Vesta
+* source:	https://sketchfab.com/3d-models/vesta-88593b02c3d1485fbe4185ff62c064d2
+* author:	Reverse Imagineering (https://sketchfab.com/wesleymjames)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Vesta" (https://sketchfab.com/3d-models/vesta-88593b02c3d1485fbe4185ff62c064d2) by Reverse Imagineering (https://sketchfab.com/wesleymjames) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
