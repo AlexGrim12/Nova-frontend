@@ -197,6 +197,22 @@ function CelestialBodyInfo({ body }: { body: CelestialBodyKey }) {
 export default function Model3DViewer() {
   const [selectedBody, setSelectedBody] = useState<CelestialBodyKey>('moon')
 
+  useEffect(() => {
+    const socket = io('http://localhost:5000')
+
+    socket.on('update_celestial_body', (data: { body: string }) => {
+      console.log('Cuerpo celeste seleccionado:', data.body)
+
+      if (data.body && CELESTIAL_BODIES[data.body as CelestialBodyKey]) {
+        setSelectedBody(data.body as CelestialBodyKey)
+      }
+    })
+
+    return () => {
+      socket.disconnect()
+    }
+  }, [])
+
   return (
     <div className="relative w-full h-full">
       <Canvas
