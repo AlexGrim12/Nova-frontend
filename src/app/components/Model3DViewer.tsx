@@ -7,6 +7,7 @@ import { useRef, useState, useEffect, Suspense } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 import { GLTF } from 'three-stdlib'
+import io from 'socket.io-client'
 
 // Definimos la información de los planetas
 const CELESTIAL_BODIES = {
@@ -169,7 +170,7 @@ function CelestialBodyInfo({ body }: { body: CelestialBodyKey }) {
 
   return (
     <div className="bg-gray-900 bg-opacity-80 p-4 rounded-lg text-white">
-      <h1 className="text-4xl font-bold text-white text-center">
+      <h1 className="text-5xl font-bold text-white text-center">
         {bodyInfo.name}
       </h1>
       <div className="grid grid-cols-2 gap-4 text-lg">
