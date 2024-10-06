@@ -45,7 +45,7 @@ For the backend code and more details, please refer to the [Backend Repository](
 2. Install dependencies:
 
    ```bash
-   cd 3D-celestial-viewer-frontend
+   cd Nova-frontend
    npm install
    ```
 
