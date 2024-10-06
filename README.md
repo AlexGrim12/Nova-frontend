@@ -1,7 +1,3 @@
-Here’s a draft of the README for your frontend project:
-
----
-
 # 3D Celestial Model Viewer Frontend
 
 This repository contains the frontend for the **3D Celestial Model Viewer**. The application allows users to explore 3D models of celestial bodies, view detailed information, and control the projection using WebSockets and voice commands.
@@ -62,11 +58,3 @@ For the backend code and more details, please refer to the [Backend Repository](
    The app will be running on `http://localhost:3000`.
 
 Make sure the backend server is running to enable voice interaction and WebSocket features.
-
-## License
-
-This project is licensed under the MIT License.
-
----
-
-This README provides a good overview of your project, highlighting both the frontend and the separate backend components. Let me know if you'd like any further adjustments!
